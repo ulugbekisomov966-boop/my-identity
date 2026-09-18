@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой QR-код</title>
+</head>
+<body>
+
+<h2>Мой идентификатор</h2>
+
+<div id="qr"></div>
+
+<p>Этот QR используется для подтверждения личности.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<script>
+  const identityKey = "ULUGBEK-9F7K-42M8-XQ21";
+
+  new QRCode(document.getElementById("qr"), {
+    text: identityKey,
+    width: 220,
+    height: 220
+  });
+</script>
+
+</body>
+</html>
