@@ -5,15 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Моя идентичность</title>
 </head>
+
 <body>
-  <h2>Это я</h2>
-  <p>Введите свой идентификатор</p>
-  <input type="text" id="id">
-  <button onclick="check()">Проверить</button>
+  <h2>Подтверждение личности</h2>
+
+  <p>1. Отсканируй свой QR-код</p>
+  <p>2. Введи секретный код</p>
+
+  <input id="code" type="password" placeholder="Секретный код">
+  <button onclick="checkIdentity()">Проверить</button>
+
+  <p id="result"></p>
 
   <script>
-    function check() {
-      alert("Проверка личности запущена");
+    const myCode = "ULUGBEK-2026";
+
+    function checkIdentity() {
+      const code = document.getElementById("code").value;
+      const result = document.getElementById("result");
+
+      if (code === myCode) {
+        result.textContent = "Личность подтверждена ✅";
+      } else {
+        result.textContent = "Неверный код ❌";
+      }
     }
   </script>
 </body>
